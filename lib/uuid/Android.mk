@@ -42,26 +42,15 @@ libext2_uuid_cflags := -O2 -g -W -Wall \
         -DHAVE_SYS_PARAM_H \
 	-DHAVE_SYSCONF
 
-libext2_uuid_system_shared_libraries := libc
-
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(libext2_uuid_src_files)
 LOCAL_C_INCLUDES := $(libext2_uuid_c_includes)
 LOCAL_CFLAGS := $(libext2_uuid_cflags)
-LOCAL_SYSTEM_SHARED_LIBRARIES := $(libext2_uuid_system_shared_libraries)
 LOCAL_MODULE := libext2_uuid
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 
 include $(BUILD_SHARED_LIBRARY)
 
-include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := $(libext2_uuid_src_files)
-LOCAL_C_INCLUDES := $(libext2_uuid_c_includes)
-LOCAL_CFLAGS := $(libext2_uuid_cflags)
-LOCAL_MODULE := libext2_uuid_host
-LOCAL_MODULE_TAGS := optional
-
-include $(BUILD_HOST_SHARED_LIBRARY)
